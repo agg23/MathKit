@@ -8,6 +8,11 @@
 
 import Foundation
 
-class ShuntingYard {
-    //var outputQueue:
+class ShuntingYard: NSObject {
+    var outputQueue = Queue<Double>()
+    var functionStack = Stack<String>()
+    
+    func parseString(string:String) {
+        // Tokenize
+    }
 }
