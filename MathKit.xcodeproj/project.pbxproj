@@ -11,10 +11,12 @@
 		668ED28F1C04FD1A00140BA0 /* MathKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668ED2841C04FD1A00140BA0 /* MathKit.framework */; };
 		668ED2941C04FD1A00140BA0 /* MathKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ED2931C04FD1A00140BA0 /* MathKitTests.swift */; };
 		668ED29F1C04FD4600140BA0 /* ShuntingYard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ED29E1C04FD4600140BA0 /* ShuntingYard.swift */; };
-		668ED2A31C04FE2900140BA0 /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ED2A21C04FE2900140BA0 /* Collections.swift */; };
+		668ED2A31C04FE2900140BA0 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ED2A21C04FE2900140BA0 /* DataStructures.swift */; };
 		668ED2A51C05037100140BA0 /* CollectionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ED2A41C05037100140BA0 /* CollectionsTest.swift */; };
 		668ED2A81C050EDE00140BA0 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ED2A71C050EDE00140BA0 /* Tokenizer.swift */; };
 		668ED2AD1C05121500140BA0 /* TokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ED2AC1C05121500140BA0 /* TokenizerTests.swift */; };
+		668ED2AF1C053FAB00140BA0 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ED2AE1C053FAB00140BA0 /* Token.swift */; };
+		668ED2B21C05435D00140BA0 /* SupportedOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ED2B11C05435D00140BA0 /* SupportedOperators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +37,12 @@
 		668ED2931C04FD1A00140BA0 /* MathKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathKitTests.swift; sourceTree = "<group>"; };
 		668ED2951C04FD1A00140BA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		668ED29E1C04FD4600140BA0 /* ShuntingYard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShuntingYard.swift; path = Solving/ShuntingYard.swift; sourceTree = "<group>"; };
-		668ED2A21C04FE2900140BA0 /* Collections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Collections.swift; path = Collections/Collections.swift; sourceTree = "<group>"; };
+		668ED2A21C04FE2900140BA0 /* DataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataStructures.swift; path = Collections/DataStructures.swift; sourceTree = "<group>"; };
 		668ED2A41C05037100140BA0 /* CollectionsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionsTest.swift; path = MathKitTests/Collections/CollectionsTest.swift; sourceTree = SOURCE_ROOT; };
 		668ED2A71C050EDE00140BA0 /* Tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tokenizer.swift; path = Solving/Tokenizer.swift; sourceTree = "<group>"; };
 		668ED2AC1C05121500140BA0 /* TokenizerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TokenizerTests.swift; path = Solving/TokenizerTests.swift; sourceTree = "<group>"; };
+		668ED2AE1C053FAB00140BA0 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Token.swift; path = Collections/Token.swift; sourceTree = "<group>"; };
+		668ED2B11C05435D00140BA0 /* SupportedOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SupportedOperators.swift; path = Utility/SupportedOperators.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 				668ED2871C04FD1A00140BA0 /* MathKit.h */,
 				668ED2A01C04FD4A00140BA0 /* Solving */,
 				668ED2A11C04FDF800140BA0 /* Collections */,
+				668ED2B01C05413C00140BA0 /* Utilities */,
 				668ED2891C04FD1A00140BA0 /* Info.plist */,
 			);
 			path = MathKit;
@@ -112,7 +117,8 @@
 		668ED2A11C04FDF800140BA0 /* Collections */ = {
 			isa = PBXGroup;
 			children = (
-				668ED2A21C04FE2900140BA0 /* Collections.swift */,
+				668ED2A21C04FE2900140BA0 /* DataStructures.swift */,
+				668ED2AE1C053FAB00140BA0 /* Token.swift */,
 			);
 			name = Collections;
 			sourceTree = "<group>";
@@ -131,6 +137,14 @@
 				668ED2AC1C05121500140BA0 /* TokenizerTests.swift */,
 			);
 			name = Solving;
+			sourceTree = "<group>";
+		};
+		668ED2B01C05413C00140BA0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				668ED2B11C05435D00140BA0 /* SupportedOperators.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,9 +255,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				668ED2B21C05435D00140BA0 /* SupportedOperators.swift in Sources */,
 				668ED29F1C04FD4600140BA0 /* ShuntingYard.swift in Sources */,
 				668ED2A81C050EDE00140BA0 /* Tokenizer.swift in Sources */,
-				668ED2A31C04FE2900140BA0 /* Collections.swift in Sources */,
+				668ED2A31C04FE2900140BA0 /* DataStructures.swift in Sources */,
+				668ED2AF1C053FAB00140BA0 /* Token.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
