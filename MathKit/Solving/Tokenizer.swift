@@ -18,13 +18,17 @@ class Tokenizer: NSObject {
         var currentToken = ""
         for char in string.characters {
             let characterString = String(char)
-            if kSupportedOperators.containsObject(characterString) {
+            
+            if kSeperator.containsObject(characterString) {
+                array.append(Token(type: TokenType.Separator, value: ","))
+            } else if kSupportedOperators.containsObject(characterString) {
                 array.append(tokenFromString(currentToken.stringByTrimmingCharactersInSet(self.whitespaceCharacters)))
                 currentToken = ""
                 array.append(Token(type: TokenType.Operator, value: characterString))
             } else {
                 currentToken += characterString
             }
+
         }
         
         // Add last token
@@ -35,9 +39,15 @@ class Tokenizer: NSObject {
         return array
     }
     
-    func tokenFromString(string:String) -> Token {
+    private func tokenFromString(string:String) -> Token {
         if let double = Double(string) {
             return Token(type: TokenType.Decimal, value: NSNumber(double: double))
+        }
+        
+        if string == "(" {
+            return Token(type: TokenType.OpenParen, value: "(")
+        } else if string == ")" {
+            return Token(type: TokenType.CloseParen, value: ")")
         }
         
         // Line should be unnecessary due to check done by calling function (tokenizeString())

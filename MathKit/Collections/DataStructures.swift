@@ -17,6 +17,14 @@ struct Stack<Element> {
     mutating func pop() -> Element {
         return stack.removeLast()
     }
+    
+    func peek() -> Element {
+        return stack.last!
+    }
+    
+    func isEmpty() -> Bool {
+        return stack.count == 0
+    }
 }
 
 private class QueueItem<Element> {

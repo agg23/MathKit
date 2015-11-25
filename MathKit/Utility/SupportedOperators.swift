@@ -12,3 +12,4 @@ import Foundation
 
 let kSupportedOperators = NSSet(array: ["+", "-", "*", "/", "^", "(", ")", "="])
 let kStringOperators = NSSet(array: ["sin", "cos"])
+let kSeperator = NSSet(array: [","])

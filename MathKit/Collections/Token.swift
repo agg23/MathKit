@@ -9,9 +9,9 @@
 import Foundation
 
 enum TokenType {
-    // Operator represents standard operators, such as +, -, and ()
+    // Operator represents standard operators, such as + and -
     // StringOperator represents string based operators, such as sin(x) and sqrt(x)
-    case Operator, StringOperator, Decimal, Variable
+    case Operator, StringOperator, Decimal, Variable, Separator, OpenParen, CloseParen
 }
 
 class Token: NSObject {
