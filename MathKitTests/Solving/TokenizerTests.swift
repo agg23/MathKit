@@ -30,5 +30,22 @@ class TokenizerTests: XCTestCase {
         XCTAssertEqual(array[5].value as? String, "=")
         XCTAssertEqual(array[6].value as? NSNumber, 4)
     }
+    
+    func testBasicParensTokenizer() {
+        let tokenizer = Tokenizer()
+        let array: Array<Token> = tokenizer.tokenizeString("5.34 + (453 - 234)")
+        
+        for token in array {
+            print(token.value)
+        }
+
+        XCTAssertEqual(array[0].type, TokenType.Decimal) // 5.34
+        XCTAssertEqual(array[1].type, TokenType.Operator) // +
+        XCTAssertEqual(array[2].type, TokenType.OpenParen) // (
+        XCTAssertEqual(array[3].type, TokenType.Decimal) // 453
+        XCTAssertEqual(array[4].type, TokenType.Operator) // -
+        XCTAssertEqual(array[5].type, TokenType.Decimal) // 234
+        XCTAssertEqual(array[6].type, TokenType.CloseParen) // )
+    }
 
 }

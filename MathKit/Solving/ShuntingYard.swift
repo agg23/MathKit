@@ -36,7 +36,7 @@ class ShuntingYard: NSObject {
                 
                 case TokenType.Operator:
                     // Handle operators
-                    while !self.functionStack.isEmpty() && self.functionStack.peek().type != TokenType.Operator {
+                    while !self.functionStack.isEmpty() && self.functionStack.peek().type == TokenType.Operator {
                         let currentOperatorPrecedence = operatorPrecedence(token)
                         let nextOperatorPrecednce = operatorPrecedence(self.functionStack.peek())
                         if operatorIsLeftAssociative(token) && currentOperatorPrecedence <= nextOperatorPrecednce ||
@@ -53,13 +53,21 @@ class ShuntingYard: NSObject {
                     self.functionStack.push(token)
                 
                 case TokenType.CloseParen:
-                    while !self.functionStack.isEmpty() && self.functionStack.peek().type != TokenType.OpenParen {
+                    while true {
+                        if !self.functionStack.isEmpty() {
+                            if self.functionStack.peek().type == TokenType.OpenParen {
+                                break
+                            }
+                        } else {
+                            NSException(name: "Unmatched parens", reason: "Unmatched parens", userInfo: nil).raise()
+                        }
+                        
                         self.outputQueue.enqueue(self.functionStack.pop())
                     }
-                    if self.functionStack.isEmpty() {
-                        NSException(name: "Unmatched parens", reason: "Unmatched parens", userInfo: nil).raise()
-                    }
+                    
+                    // Pop open paren off stack
                     self.functionStack.pop()
+                    
                     if self.functionStack.peek().type == TokenType.StringOperator {
                         self.outputQueue.enqueue(self.functionStack.pop())
                     }

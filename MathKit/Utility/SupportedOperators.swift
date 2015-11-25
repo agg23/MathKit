@@ -10,6 +10,6 @@ import Foundation
 
 // Recognized operators
 
-let kSupportedOperators = NSSet(array: ["+", "-", "*", "/", "^", "(", ")", "="])
+let kSupportedOperators = NSSet(array: ["+", "-", "*", "/", "^", "="])
 let kStringOperators = NSSet(array: ["sin", "cos"])
 let kSeperator = NSSet(array: [","])
