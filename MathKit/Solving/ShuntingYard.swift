@@ -14,7 +14,7 @@ class ShuntingYard: NSObject {
     
     var tokenizer = Tokenizer()
     
-    func parseString(string:String) {
+    func buildPostfixExpressionFromString(string:String) -> Expression {
         // Tokenize
         let tokens = tokenizer.tokenizeString(string)
         
@@ -86,6 +86,21 @@ class ShuntingYard: NSObject {
             
             self.outputQueue.enqueue(token)
         }
+        
+        var orderedTokens = Array<Token>()
+        var variables = Array<Token>()
+        
+        while !self.outputQueue.isEmpty() {
+            let token = self.outputQueue.dequeue()!
+            
+            if token.type == TokenType.Variable {
+                variables.append(token)
+            }
+            
+            orderedTokens.append(token)
+        }
+        
+        return Expression(tokens: orderedTokens, variables: variables)
     }
     
     func operatorPrecedence(token: Token) -> Int {

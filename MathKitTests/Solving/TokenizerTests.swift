@@ -35,10 +35,6 @@ class TokenizerTests: XCTestCase {
         let tokenizer = Tokenizer()
         let array: Array<Token> = tokenizer.tokenizeString("5.34 + (453 - 234)")
         
-        for token in array {
-            print(token.value)
-        }
-
         XCTAssertEqual(array[0].type, TokenType.Decimal) // 5.34
         XCTAssertEqual(array[1].type, TokenType.Operator) // +
         XCTAssertEqual(array[2].type, TokenType.OpenParen) // (

@@ -14,9 +14,7 @@ class ShuntingYardTests: XCTestCase {
     func testBasicShuntingYard() {
         let shuntingYard = ShuntingYard()
         
-        shuntingYard.parseString("4 + 5 + (6-7)")
-        
-        let array = toArray(&shuntingYard.outputQueue)
+        let array = shuntingYard.buildPostfixExpressionFromString("4 + 5 + (6-7)").postfixTokens
         
         XCTAssertEqual(array[0].value as? NSNumber, 4)
         XCTAssertEqual(array[1].value as? NSNumber, 5)
@@ -30,9 +28,7 @@ class ShuntingYardTests: XCTestCase {
     func testLongerShuntingYard() {
         let shuntingYard = ShuntingYard()
         
-        shuntingYard.parseString("4 + 5 + (6-7) * 2 + (23-4)")
-        
-        let array = toArray(&shuntingYard.outputQueue)
+        let array = shuntingYard.buildPostfixExpressionFromString("4 + 5 + (6-7) * 2 + (23-4)").postfixTokens
         
         XCTAssertEqual(array[0].value as? NSNumber, 4)
         XCTAssertEqual(array[1].value as? NSNumber, 5)
@@ -52,9 +48,7 @@ class ShuntingYardTests: XCTestCase {
     func testRightAssociativeShuntingYard() {
         let shuntingYard = ShuntingYard()
         
-        shuntingYard.parseString("4 ^ (3 + 2) * 3")
-        
-        let array = toArray(&shuntingYard.outputQueue)
+        let array = shuntingYard.buildPostfixExpressionFromString("4 ^ (3 + 2) * 3").postfixTokens
         
         XCTAssertEqual(array[0].value as? NSNumber, 4)
         XCTAssertEqual(array[1].value as? NSNumber, 3)

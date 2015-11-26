@@ -18,6 +18,7 @@
 		668ED2AF1C053FAB00140BA0 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ED2AE1C053FAB00140BA0 /* Token.swift */; };
 		668ED2B21C05435D00140BA0 /* SupportedOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ED2B11C05435D00140BA0 /* SupportedOperators.swift */; };
 		668ED2B41C056AB100140BA0 /* ShuntingYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ED2B31C056AB100140BA0 /* ShuntingYardTests.swift */; };
+		668ED2B61C0688FC00140BA0 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ED2B51C0688FC00140BA0 /* Expression.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		668ED2AE1C053FAB00140BA0 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Token.swift; path = Collections/Token.swift; sourceTree = "<group>"; };
 		668ED2B11C05435D00140BA0 /* SupportedOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SupportedOperators.swift; path = Utility/SupportedOperators.swift; sourceTree = "<group>"; };
 		668ED2B31C056AB100140BA0 /* ShuntingYardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShuntingYardTests.swift; path = Solving/ShuntingYardTests.swift; sourceTree = "<group>"; };
+		668ED2B51C0688FC00140BA0 /* Expression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Collections/Expression.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			children = (
 				668ED2A21C04FE2900140BA0 /* DataStructures.swift */,
 				668ED2AE1C053FAB00140BA0 /* Token.swift */,
+				668ED2B51C0688FC00140BA0 /* Expression.swift */,
 			);
 			name = Collections;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				668ED2A81C050EDE00140BA0 /* Tokenizer.swift in Sources */,
 				668ED2A31C04FE2900140BA0 /* DataStructures.swift in Sources */,
 				668ED2AF1C053FAB00140BA0 /* Token.swift in Sources */,
+				668ED2B61C0688FC00140BA0 /* Expression.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
