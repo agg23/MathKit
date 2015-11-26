@@ -103,6 +103,56 @@ class ShuntingYard: NSObject {
         return Expression(tokens: orderedTokens, variables: variables)
     }
     
+    func evaluateExpression(expression: Expression) -> ResultToken? {
+        var stack = Stack<Token>()
+        
+        for token in expression.postfixTokens {
+            if token.type == TokenType.Decimal {
+                stack.push(token)
+            } else if token.type == TokenType.Operator /*|| token.type == TokenType.StringOperator*/ {
+                //TODO: Check if stack contains sufficient number of values for this operator
+                
+                let result = evaluateOperator(&stack, operatorString: token.value as! String)
+
+                if result != nil {
+                    stack.push(result!)
+                }
+            }
+        }
+        
+        if stack.isEmpty() {
+            //TODO: Throw error
+            print("Empty stack error")
+        }
+        
+        let token = stack.pop()
+        
+        if token.type == TokenType.Decimal {
+            return ResultToken(token: token)
+        } else if token.type == TokenType.Result {
+            return token as? ResultToken
+        } else {
+            return ResultToken(errorMessage: "Invalid stack result")
+        }
+    }
+    
+    func evaluateOperator(inout stack: Stack<Token>, operatorString: String) -> ResultToken? {
+        switch(operatorString) {
+            case "+":
+                let second = stack.pop().value as! NSNumber
+                let first = stack.pop().value as! NSNumber
+                
+                return Operations.add(first, second: second)
+            case "-":
+                let second = stack.pop().value as! NSNumber
+                let first = stack.pop().value as! NSNumber
+                
+                return Operations.subtract(first, second: second)
+            default:
+                return nil
+        }
+    }
+    
     func operatorPrecedence(token: Token) -> Int {
         if token.type == TokenType.Operator {
             switch (token.value as! String) {

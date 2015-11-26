@@ -59,7 +59,21 @@ class ShuntingYardTests: XCTestCase {
         XCTAssertEqual(array[6].value as? String, "*")
     }
     
-    func toArray(inout queue: Queue<Token>) -> Array<Token> {
+    //MARK: Evaluator Tests
+    
+    func testBasicEvaluator() {
+        let shuntingYard = ShuntingYard()
+        
+        let expression = shuntingYard.buildPostfixExpressionFromString("4 + 5 + (6-7)")
+        
+        let result = shuntingYard.evaluateExpression(expression)
+        
+        XCTAssertEqual((result!.value as! NSNumber).doubleValue, 8)
+    }
+    
+    
+    //MARK: Helper methods
+    private func toArray(inout queue: Queue<Token>) -> Array<Token> {
         var array = Array<Token>()
         
         while !queue.isEmpty() {

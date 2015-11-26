@@ -11,7 +11,7 @@ import Foundation
 enum TokenType {
     // Operator represents standard operators, such as + and -
     // StringOperator represents string based operators, such as sin(x) and sqrt(x)
-    case Operator, StringOperator, Decimal, Variable, Separator, OpenParen, CloseParen
+    case Operator, StringOperator, Decimal, Variable, Separator, OpenParen, CloseParen, Result
 }
 
 class Token: NSObject {
@@ -21,5 +21,9 @@ class Token: NSObject {
     init(type: TokenType, value: AnyObject) {
         self.type = type
         self.value = value
+    }
+    
+    override var description: String {
+        return "Token(value: \(value), type: \(type)"
     }
 }
