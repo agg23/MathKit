@@ -13,7 +13,7 @@ class ResultToken: Token {
     
     init(errorMessage: String) {
         self.error = errorMessage
-        super.init(type: TokenType.Result, value: "")
+        super.init(type: TokenType.Result, value: nil)
     }
     
     init(token: Token) {

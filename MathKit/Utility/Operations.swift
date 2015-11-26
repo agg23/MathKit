@@ -10,16 +10,14 @@ import Foundation
 
 class Operations {
     class func add(first: NSNumber, second: NSNumber) -> ResultToken {
-        print("\(first.doubleValue) plus \(second.doubleValue)")
         return ResultToken(decimal: first.doubleValue + second.doubleValue)
     }
     
     class func subtract(first: NSNumber, second: NSNumber) -> ResultToken {
-        print("\(first.doubleValue) minus \(second.doubleValue)")
         return ResultToken(decimal: first.doubleValue - second.doubleValue)
     }
     
-    class func multipy(first: NSNumber, second: NSNumber) -> ResultToken {
+    class func multiply(first: NSNumber, second: NSNumber) -> ResultToken {
         return ResultToken(decimal: first.doubleValue * second.doubleValue)
     }
     

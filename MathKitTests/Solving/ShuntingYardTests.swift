@@ -71,6 +71,27 @@ class ShuntingYardTests: XCTestCase {
         XCTAssertEqual((result!.value as! NSNumber).doubleValue, 8)
     }
     
+    func testAllBasicOperatorsEvaluator() {
+        let shuntingYard = ShuntingYard()
+        
+        let expression = shuntingYard.buildPostfixExpressionFromString("4 + 5 + (6-7)/2 * .5")
+        
+        let result = shuntingYard.evaluateExpression(expression)
+        
+        XCTAssertEqual((result!.value as! NSNumber).doubleValue, 8.75)
+    }
+    
+    func testDivideByZeroEvaluator() {
+        let shuntingYard = ShuntingYard()
+        
+        let expression = shuntingYard.buildPostfixExpressionFromString("5/0")
+        
+        let result = shuntingYard.evaluateExpression(expression)
+        
+        //TODO: Update to handle error
+        XCTAssert(result!.value == nil)
+    }
+    
     
     //MARK: Helper methods
     private func toArray(inout queue: Queue<Token>) -> Array<Token> {

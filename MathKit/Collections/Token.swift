@@ -16,9 +16,9 @@ enum TokenType {
 
 class Token: NSObject {
     var type: TokenType
-    var value: AnyObject
+    var value: AnyObject?
     
-    init(type: TokenType, value: AnyObject) {
+    init(type: TokenType, value: AnyObject?) {
         self.type = type
         self.value = value
     }

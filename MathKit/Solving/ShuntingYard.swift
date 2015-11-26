@@ -143,11 +143,25 @@ class ShuntingYard: NSObject {
                 let first = stack.pop().value as! NSNumber
                 
                 return Operations.add(first, second: second)
+            
             case "-":
                 let second = stack.pop().value as! NSNumber
                 let first = stack.pop().value as! NSNumber
                 
                 return Operations.subtract(first, second: second)
+            
+            case "*":
+                let second = stack.pop().value as! NSNumber
+                let first = stack.pop().value as! NSNumber
+                
+                return Operations.multiply(first, second: second)
+            
+            case "/":
+                let second = stack.pop().value as! NSNumber
+                let first = stack.pop().value as! NSNumber
+                
+                return Operations.divide(first, second: second)
+
             default:
                 return nil
         }

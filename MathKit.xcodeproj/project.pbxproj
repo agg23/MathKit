@@ -19,7 +19,7 @@
 		668ED2B21C05435D00140BA0 /* SupportedOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ED2B11C05435D00140BA0 /* SupportedOperators.swift */; };
 		668ED2B41C056AB100140BA0 /* ShuntingYardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ED2B31C056AB100140BA0 /* ShuntingYardTests.swift */; };
 		668ED2B61C0688FC00140BA0 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ED2B51C0688FC00140BA0 /* Expression.swift */; };
-		668ED2B81C07601400140BA0 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ED2B71C07601400140BA0 /* Result.swift */; };
+		668ED2B81C07601400140BA0 /* ResultToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ED2B71C07601400140BA0 /* ResultToken.swift */; };
 		668ED2BA1C07636A00140BA0 /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ED2B91C07636A00140BA0 /* Operations.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +49,7 @@
 		668ED2B11C05435D00140BA0 /* SupportedOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SupportedOperators.swift; path = Utility/SupportedOperators.swift; sourceTree = "<group>"; };
 		668ED2B31C056AB100140BA0 /* ShuntingYardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShuntingYardTests.swift; path = Solving/ShuntingYardTests.swift; sourceTree = "<group>"; };
 		668ED2B51C0688FC00140BA0 /* Expression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Collections/Expression.swift; sourceTree = "<group>"; };
-		668ED2B71C07601400140BA0 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Collections/Result.swift; sourceTree = "<group>"; };
+		668ED2B71C07601400140BA0 /* ResultToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultToken.swift; path = Collections/ResultToken.swift; sourceTree = "<group>"; };
 		668ED2B91C07636A00140BA0 /* Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operations.swift; path = Utility/Operations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,7 +128,7 @@
 				668ED2A21C04FE2900140BA0 /* DataStructures.swift */,
 				668ED2AE1C053FAB00140BA0 /* Token.swift */,
 				668ED2B51C0688FC00140BA0 /* Expression.swift */,
-				668ED2B71C07601400140BA0 /* Result.swift */,
+				668ED2B71C07601400140BA0 /* ResultToken.swift */,
 			);
 			name = Collections;
 			sourceTree = "<group>";
@@ -271,7 +271,7 @@
 				668ED29F1C04FD4600140BA0 /* ShuntingYard.swift in Sources */,
 				668ED2A81C050EDE00140BA0 /* Tokenizer.swift in Sources */,
 				668ED2A31C04FE2900140BA0 /* DataStructures.swift in Sources */,
-				668ED2B81C07601400140BA0 /* Result.swift in Sources */,
+				668ED2B81C07601400140BA0 /* ResultToken.swift in Sources */,
 				668ED2AF1C053FAB00140BA0 /* Token.swift in Sources */,
 				668ED2B61C0688FC00140BA0 /* Expression.swift in Sources */,
 				668ED2BA1C07636A00140BA0 /* Operations.swift in Sources */,
